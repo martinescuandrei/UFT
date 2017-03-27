@@ -1,2 +1,2 @@
 ﻿RunAction "Login", oneIteration
-RunAction "SearchFlight", oneIteration
+RunAction "SearchFlight", allIterations
