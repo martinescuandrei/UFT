@@ -1,5 +1,5 @@
 ﻿Option Explicit
-Dim user, password, encryptedPassword,agentNameObject,reportName,startTime, endTime @@ hightlight id_;_265902_;_script infofile_;_ZIP::ssf76.xml_;_
+Dim user, password, encryptedPassword,agentNameObject,reportName,startTime, endTime, focused @@ hightlight id_;_265902_;_script infofile_;_ZIP::ssf76.xml_;_
 
 user = "john"
 password = "hp"
@@ -13,10 +13,15 @@ Services.StartTransaction "LoginTime"
 startTime = Timer
  
 'Login
-WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("agentName").Set DataTable("user", dtLocalSheet) @@ hightlight id_;_2085869992_;_script infofile_;_ZIP::ssf73.xml_;_
+WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("agentName").Set DataTable("user", dtLocalSheet) @@ hightlight id_;_1885673688_;_script infofile_;_ZIP::ssf77.xml_;_
 'WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("agentName").Set user
 
-WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("password").Set DataTable("password", dtLocalSheet) @@ hightlight id_;_2085848056_;_script infofile_;_ZIP::ssf74.xml_;_
+focused = WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("agentName").GetROProperty("focused") @@ hightlight id_;_1885673688_;_script infofile_;_ZIP::ssf78.xml_;_
+print(focused)
+
+Call checkObjectProperty(focused)
+
+WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("password").Set DataTable("password", dtLocalSheet) @@ hightlight id_;_1890368368_;_script infofile_;_ZIP::ssf79.xml_;_
 'WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("password").Set password
 
 
@@ -29,5 +34,5 @@ print(endTime-startTime)
 print(Services.EndTransaction ("LoginTime"))
 
 'Check login
-WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("John Smith").Check CheckPoint("John Smith") @@ hightlight id_;_1988335584_;_script infofile_;_ZIP::ssf75.xml_;_
+WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("John Smith").Check CheckPoint("John Smith") @@ hightlight id_;_2125868984_;_script infofile_;_ZIP::ssf80.xml_;_
 
