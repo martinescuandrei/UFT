@@ -28,6 +28,7 @@ Default Profile=default.usp
 [Rendezvous]
 
 [Transactions]
+LoginTime=
 
 [ActiveScript]
 Lang=none
