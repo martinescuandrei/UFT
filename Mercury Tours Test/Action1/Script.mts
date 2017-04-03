@@ -1,5 +1,5 @@
 ﻿Option  Explicit
-Dim browserType, site, modeMaximized, pageTitle, EXPECTED_TITLE
+Dim browserType, site, modeMaximized, pageTitle, EXPECTED_TITLE, objectMainPage, Iterator
 
 browserType = "iexplore"
 site = "http://newtours.demoaut.com/mercurywelcome.php"
@@ -8,7 +8,7 @@ modeMaximized = 3
 'Open browser 
 SystemUtil.Run browserType,site,"","",modeMaximized
 
-wait 3
+'wait 3
 
 'Check browser opened at specified site
 
@@ -25,4 +25,14 @@ If pageTitle = EXPECTED_TITLE Then
 		
 End If
 
+
+Set objectMainPage = Browser("Welcome: Mercury Tours").Page("Welcome: Mercury Tours")
+
+For Iterator = 1 To DataTable.GetSheet(dtLocalSheet).GetRowCount Step 1
+
+	DataTable.SetCurrentRow(Iterator) 
+	
+	call checkElementIsPresentBySpecifiedObject(objectMainPage.WebElement(DataTable.Value("WebElementName",dtLocalSheet)), DataTable.Value("WebElementName",dtLocalSheet))
+	
+Next
 

@@ -1,3 +1,3 @@
 ﻿RunAction "SetUp", oneIteration
-RunAction "TestElementsFromHomePage", oneIteration
 RunAction "Login", oneIteration
+RunAction "FlightFinder", oneIteration
