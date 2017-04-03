@@ -16,10 +16,17 @@ If Browser("Find a Flight: Mercury").Window("Security Warning").Exist then
 	Browser("Find a Flight: Mercury").Window("Security Warning").Click
 	
 End If
- @@ hightlight id_;_Browser("Find a Flight: Mercury").Page("Find a Flight: Mercury").Image("findFlights")_;_script infofile_;_ZIP::ssf19.xml_;_
-
 
 
 'Check if login was made
 
+Set objectMainPage = Browser("Find a Flight: Mercury").Page("Find a Flight: Mercury")
+
+For Iterator = 1 To DataTable.GetSheet(dtLocalSheet).GetRowCount Step 1
+
+	DataTable.SetCurrentRow(Iterator) 
+	
+	call checkElementIsPresentBySpecifiedObject(objectMainPage.WebList(DataTable.Value("WebElementName",dtLocalSheet)), DataTable.Value("WebElementName",dtLocalSheet))
+	
+Next
  @@ hightlight id_;_591172_;_script infofile_;_ZIP::ssf29.xml_;_

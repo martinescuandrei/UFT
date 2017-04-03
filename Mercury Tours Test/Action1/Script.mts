@@ -26,6 +26,8 @@ If pageTitle = EXPECTED_TITLE Then
 End If
 
 
+'Check web elements
+
 Set objectMainPage = Browser("Welcome: Mercury Tours").Page("Welcome: Mercury Tours")
 
 For Iterator = 1 To DataTable.GetSheet(dtLocalSheet).GetRowCount Step 1
